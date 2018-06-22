@@ -14,8 +14,10 @@ $(document).on("click", ".comment-button", function() {
         $("#" + thisId).append("<br>");
 
         console.log(comment.comment);
-  
-        $("#" + thisId).append("<div class='card-body'>" + comment.comment.commentbody + "</div>");
+        comment.comment.forEach( function(comment){
+          $("#" + thisId).append("<div class='card-body'>" + comment.commentbody + "</div>");
+        })
+        
       });
   });
   
