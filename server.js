@@ -75,6 +75,13 @@ app.post("/articles/:id", function(req, res) {
         res.json(err);
       });
   });
+
+  app.delete("/comment/:id", function(req, res) {
+    var deleteComment = req.params.id;
+    db.Comment.deleteOne(deleteComment, function(err){
+        console.log(err);
+    })
+  });
   
 
 app.get("/scrape", function(req, res) {
