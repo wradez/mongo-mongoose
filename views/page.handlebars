@@ -1,0 +1,73 @@
+{{!-- navbar --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">OSRS Scraper</a>
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/scrape">Saved Articles
+                <span class="sr-only">(current)</span>
+            </a>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+{{!-- //Jumbotron --}}
+<div class="jumbotron text-center">
+  <h1 class="display-4">OSRS Scraper!</h1>
+  <p>Click the button below to scrape the latest official OSRS news.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape!</a>
+  </p>
+</div>
+
+{{!-- Main article container --}}
+<div class="container" >
+    {{#each article}}
+        <div class="card">
+            <div class="card-body">
+                <h6><b>Headline: </b></h6>
+                <p>{{headline}}</p>
+                <h6><b>Summary: </b></h6>
+                <p>{{summary}}</p>
+                <h6><b>URL: </b></h6>
+                <p>{{URL}}</p>
+            </div>
+            <button class="btn btn-primary comment-button" type="button" data-id="{{_id}}" data-toggle="collapse" data-target="#comments" aria-expanded="false" aria-controls="comments">
+                Comments
+            </button>
+            <div class="collapse" id="comments">
+                <div class="card card-body" id="{{_id}}"></div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{!-- Comments modal --}}
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Comments</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
