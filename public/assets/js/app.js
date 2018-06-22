@@ -22,7 +22,7 @@ $(document).on("click", ".comment-button", function() {
     var thisComment = $(this).attr("data-comment");
     var thisId = $(this).attr("data-id");
 
-
+    console.log('save button was clicked');
   
     $.ajax({
       method: "POST",
