@@ -62,15 +62,16 @@ app.get("/articles/:id", function (req, res) {
 
 app.post("/articles/:id", function(req, res) {
     var newComment = req.body;
-    console.log(newComment);
     db.Comment.create(newComment)
       .then(function(dbComment) {
-        return db.Article.findOneAndUpdate({ _id: req.params.id }, { comment: dbComment._id }, { new: true });
+        return db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { comment: dbComment._id } }, { new: true });
       })
       .then(function(dbArticle) {
-        res.json(dbArticle);
+        console.log(dbArticle);
       })
       .catch(function(err) {
+        console.log(err);
+
         res.json(err);
       });
   });

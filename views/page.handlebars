@@ -41,10 +41,10 @@
                 <h6><b>URL: </b></h6>
                 <p>{{URL}}</p>
             </div>
-            <button class="btn btn-primary comment-button" type="button" data-id="{{_id}}" data-toggle="collapse" data-target="#comments" aria-expanded="false" aria-controls="comments">
+            <button class="btn btn-primary comment-button" type="button" data-id="{{_id}}" data-toggle="collapse" data-target="#comments{{_id}}" aria-expanded="false" aria-controls="comments">
                 Comments
             </button>
-            <div class="collapse" id="comments">
+            <div class="collapse" id="comments{{_id}}">
                 <div class="card card-body" id="{{_id}}"></div>
             </div>
         </div>
