@@ -15,7 +15,7 @@ $(document).on("click", ".comment-button", function() {
 
         console.log(comment.comment);
         comment.comment.forEach( function(comment){
-          $("#" + thisId).append("<div class='card-body'>" + comment.commentbody + "</div>");
+          $("#" + thisId).append("<div class='card'>Comment# " + comment._id + "<p class='card-body'>" + comment.commentbody + "</p></div>");
         })
         
       });
