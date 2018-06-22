@@ -12,6 +12,8 @@ $(document).on("click", ".comment-button", function() {
         $("#" + thisId).append("<textarea id='comment" + comment._id + "' name='body'></textarea>");
         $("#" + thisId).append("<button data-id=" + comment._id + " data-comment=comment" + comment._id + " id='saveComment'>Save Comment</button>");
         $("#" + thisId).append("<br>");
+
+        console.log(comment.comment);
   
         $("#" + thisId).append("<div class='card-body'>" + comment.comment.commentbody + "</div>");
       });
