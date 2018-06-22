@@ -40,6 +40,20 @@ $(document).on("click", ".comment-button", function() {
         $("#notes").empty();
       });
   
-    $("#comment" + thisComment).val("");
+    $("#" + thisId).val("");
 
   });
+
+  $(document).on("click", ".delete", function() {
+
+    var thisId = $(this).attr("data-id");
+
+    $.ajax({
+      method: "DELETE",
+      url: "/comment/" + thisId,
+    }).then(function(res){
+      console.log("Dlete button was clicked");
+      console.log(res);
+    });
+
+  })
