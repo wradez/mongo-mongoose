@@ -1,6 +1,6 @@
 # mongo-mongoose
 
-This project uses HTML, Javascript, jQuery, MongoDB, Mongoose, and Handlebars.
+This project uses HTML, CSS (Bootstrap), Javascript, jQuery, MongoDB, Mongoose, and Handlebars.
 
 <img width="1440" alt="screen shot 2018-09-17 at 4 28 59 pm" src="https://user-images.githubusercontent.com/36545686/45653924-e4208f80-ba96-11e8-9780-bddec1ba08d9.png">
 
